@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class SnippetData {
     
@@ -15,8 +16,14 @@ class SnippetData {
     init(snippetType: SnippetType) {
         type = snippetType
         print ("\(type.rawValue) snippet created")
-        
-        
-        
+    }
+}
+
+class PhotoData: SnippetData {
+    let photoData: UIImage
+    init(photo: UIImage) {
+        photoData = photo
+        super.init(snippetType: .photo)
+        print("Photo snipper data: \(photoData)")
     }
 }
