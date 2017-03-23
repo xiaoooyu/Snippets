@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SnippetData {
+class SnippetData {
     
     let type: SnippetType
     
