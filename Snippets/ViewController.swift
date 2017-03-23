@@ -11,9 +11,12 @@ import UIKit
 class ViewController: UIViewController {
 
     var data: [SnippetData] = [SnippetData]()
+    let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePicker.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -33,7 +36,7 @@ class ViewController: UIViewController {
         
         let photoAction = UIAlertAction(title: "Photo", style: .default) {
             (alert: UIAlertAction!) -> Void in
-            self.data.append(SnippetData(snippetType: .photo))
+            self.createNewPhotoSnippet();
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -60,6 +63,30 @@ class ViewController: UIViewController {
             self.data.append(newTextSnippet)
         }
         present(textEntryVC, animated: true, completion: nil)       
+    }
+    
+    func createNewPhotoSnippet() {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            print("Camera is not available")
+            return
+        }
+        
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        guard let image = info[UIImagePickerControllerEditedImage] as? UIImage else {
+            print("Image could not be found")
+            return
+        }
+        
+        let newPhotoSnippet = PhotoData(photo: image)
+        self.data.append(newPhotoSnippet)
+        dismiss(animated: true, completion: nil)
     }
 }
 
