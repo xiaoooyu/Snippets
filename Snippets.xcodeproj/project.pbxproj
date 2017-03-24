@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B17FF1B1E816C2200C9E666 /* SnippetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B17FF1A1E816C2200C9E666 /* SnippetData.swift */; };
+		4B26AEB81E849BBD00561821 /* TextSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26AEB71E849BBD00561821 /* TextSnippetCell.swift */; };
+		4B26AEBA1E849C1600561821 /* PhotoSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26AEB91E849C1600561821 /* PhotoSnippetCell.swift */; };
 		4B7333791E816B1700D7D941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7333781E816B1700D7D941 /* AppDelegate.swift */; };
 		4B73337B1E816B1700D7D941 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B73337A1E816B1700D7D941 /* ViewController.swift */; };
 		4B73337E1E816B1700D7D941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B73337C1E816B1700D7D941 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		4B17FF1A1E816C2200C9E666 /* SnippetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnippetData.swift; sourceTree = "<group>"; };
+		4B26AEB71E849BBD00561821 /* TextSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSnippetCell.swift; sourceTree = "<group>"; };
+		4B26AEB91E849C1600561821 /* PhotoSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSnippetCell.swift; sourceTree = "<group>"; };
 		4B7333751E816B1700D7D941 /* Snippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7333781E816B1700D7D941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B73337A1E816B1700D7D941 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				4BDDE1E31E8170EC0080CD67 /* SnippetType.swift */,
 				4BA38FB51E82A2210092DDB5 /* TextData.swift */,
 				4BA38FB71E82A4330092DDB5 /* TextSnippetEntryViewController.swift */,
+				4B26AEB71E849BBD00561821 /* TextSnippetCell.swift */,
+				4B26AEB91E849C1600561821 /* PhotoSnippetCell.swift */,
 			);
 			path = Snippets;
 			sourceTree = "<group>";
@@ -151,9 +157,11 @@
 			files = (
 				4B73337B1E816B1700D7D941 /* ViewController.swift in Sources */,
 				4BDDE1E41E8170EC0080CD67 /* SnippetType.swift in Sources */,
+				4B26AEB81E849BBD00561821 /* TextSnippetCell.swift in Sources */,
 				4BA38FB81E82A4330092DDB5 /* TextSnippetEntryViewController.swift in Sources */,
 				4B17FF1B1E816C2200C9E666 /* SnippetData.swift in Sources */,
 				4B7333791E816B1700D7D941 /* AppDelegate.swift in Sources */,
+				4B26AEBA1E849C1600561821 /* PhotoSnippetCell.swift in Sources */,
 				4BA38FB61E82A2210092DDB5 /* TextData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
