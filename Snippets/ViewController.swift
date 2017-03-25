@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         textEntryVC.modalTransitionStyle = .coverVertical
         textEntryVC.saveText = {
             (text:String) in
-            let newTextSnippet = TextData(text: text)
+            let newTextSnippet = TextData(text: text, creationDate: Date())
             self.data.append(newTextSnippet)
         }
         present(textEntryVC, animated: true, completion: nil)       
@@ -96,7 +96,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             return
         }
         
-        let newPhotoSnippet = PhotoData(photo: image)
+        let newPhotoSnippet = PhotoData(photo: image, creationDate: Date())
         self.data.append(newPhotoSnippet)
         dismiss(animated: true, completion: nil)
     }
@@ -115,11 +115,16 @@ extension ViewController: UITableViewDataSource {
         let cell: UITableViewCell
         let sortedData = data.reversed() as [SnippetData]
         let snippetData = sortedData[indexPath.row]
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, yyyy hh:mm a"
+        let dateString = formatter.string(from: snippetData.date)
+        
         switch snippetData.type {
         case .text:
             cell = tableView.dequeueReusableCell(withIdentifier: "textSnippetCell", for: indexPath)
-            
             (cell as! TextSnippetCell).label.text = (snippetData as! TextData).textData
+            (cell as! TextSnippetCell).date.text = dateString
         case .photo:
             cell = tableView.dequeueReusableCell(withIdentifier: "photoSnippetCell", for: indexPath)
             (cell as! PhotoSnippetCell).photo.image = (snippetData as! PhotoData).photoData
