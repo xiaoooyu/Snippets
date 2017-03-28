@@ -41,6 +41,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func handleShortcut(shortcutItem: UIApplicationShortcutItem) {
+        let vc = self.window?.rootViewController as! ViewController
+        
+        switch shortcutItem.type {
+        case ShortcutItems.newText.rawValue:
+            vc.createNewTextSnippet()
+        case ShortcutItems.newPhoto.rawValue:
+            vc.createNewPhotoSnippet()
+        default:
+            break
+        }
+    }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        let vc = self.window!.rootViewController
+        
+        if vc?.presentedViewController != nil {
+            let alert = UIAlertController(title: "Unfinished Snippet",
+                                          message: "Do you want to continue creating this snippet, or erase and start a new snippet?",
+                                          preferredStyle: .alert)
+            let continueAction = UIAlertAction(title: "Continue", style: .default, handler: nil)
+            let eraseAction = UIAlertAction(title: "Erase", style: .destructive, handler: {
+                (alert: UIAlertAction!) -> Void in
+                vc?.dismiss(animated: true, completion: nil)
+                self.handleShortcut(shortcutItem: shortcutItem)
+            })
+            
+            alert.addAction(continueAction)
+            alert.addAction(eraseAction)
+            vc?.presentedViewController!.present(alert, animated: true, completion: nil)
+        } else {
+            handleShortcut(shortcutItem: shortcutItem)
+        }
+    }
+    
+    enum ShortcutItems: String {
+        case newText = "com.PacktPub.Snippets.createTextSnippet"
+        case newPhoto = "com.PacktPub.Snippets.createPhotoSnippet"
+    }
 
 }
 

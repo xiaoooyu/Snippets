@@ -43,5 +43,24 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeCapturePhoto</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>New Photo Snippet</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.PacktPub.Snippets.createPhotoSnippet</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeCompose</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>New Text Snippet</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.PacktPub.Snippets.createTextSnippet</string>
+		</dict>
+	</array>
 </dict>
 </plist>
