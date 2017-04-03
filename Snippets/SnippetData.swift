@@ -8,34 +8,40 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 class SnippetData {
     
     let type: SnippetType
     let date: Date
+    let coordinate: CLLocationCoordinate2D?
     
-    init(snippetType: SnippetType, creationDate: Date) {
+    init(snippetType: SnippetType, creationDate: Date,
+        creationCoordinate: CLLocationCoordinate2D) {
         type = snippetType
         date = creationDate
-        print ("\(type.rawValue) snippet created as \(date)")
+        coordinate = creationCoordinate
+        print ("\(type.rawValue) snippet created on \(date) at \(coordinate.debugDescription)")
     }
 }
 
 class TextData: SnippetData {
     let textData: String
     
-    init(text: String, creationDate: Date) {
+    init(text: String, creationDate: Date,
+         creationCoordinate: CLLocationCoordinate2D) {
         textData = text;
-        super.init(snippetType: .text, creationDate: creationDate)
+        super.init(snippetType: .text, creationDate: creationDate, creationCoordinate: creationCoordinate)
         print ("Text snippet data: \(textData)")
     }
 }
 
 class PhotoData: SnippetData {
     let photoData: UIImage
-    init(photo: UIImage, creationDate: Date) {
+    init(photo: UIImage, creationDate: Date,
+         creationCoordinate: CLLocationCoordinate2D) {
         photoData = photo
-        super.init(snippetType: .photo, creationDate: creationDate)
+        super.init(snippetType: .photo, creationDate: creationDate, creationCoordinate: creationCoordinate)
         print("Photo snipper data: \(photoData)")
     }
 }

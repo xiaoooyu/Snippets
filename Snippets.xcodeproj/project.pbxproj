@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B17FF1B1E816C2200C9E666 /* SnippetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B17FF1A1E816C2200C9E666 /* SnippetData.swift */; };
+		4B24B7631E9129A900E11666 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B24B7611E91299E00E11666 /* CoreLocation.framework */; };
 		4B26AEB81E849BBD00561821 /* TextSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26AEB71E849BBD00561821 /* TextSnippetCell.swift */; };
 		4B26AEBA1E849C1600561821 /* PhotoSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26AEB91E849C1600561821 /* PhotoSnippetCell.swift */; };
 		4B26AEC21E84CEA200561821 /* SnippetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26AEC11E84CEA200561821 /* SnippetsTests.swift */; };
@@ -32,11 +33,13 @@
 
 /* Begin PBXFileReference section */
 		4B17FF1A1E816C2200C9E666 /* SnippetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnippetData.swift; sourceTree = "<group>"; };
+		4B24B7611E91299E00E11666 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4B26AEB71E849BBD00561821 /* TextSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSnippetCell.swift; sourceTree = "<group>"; };
 		4B26AEB91E849C1600561821 /* PhotoSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSnippetCell.swift; sourceTree = "<group>"; };
 		4B26AEBF1E84CEA100561821 /* SnippetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B26AEC11E84CEA200561821 /* SnippetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsTests.swift; sourceTree = "<group>"; };
 		4B26AEC31E84CEA200561821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B40FA5A1E8DD8F6008213D0 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		4B7333751E816B1700D7D941 /* Snippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7333781E816B1700D7D941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B73337A1E816B1700D7D941 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B24B7631E9129A900E11666 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +79,22 @@
 			path = SnippetsTests;
 			sourceTree = "<group>";
 		};
+		4B40FA591E8DD8F6008213D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B24B7611E91299E00E11666 /* CoreLocation.framework */,
+				4B40FA5A1E8DD8F6008213D0 /* Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4B73336C1E816B1700D7D941 = {
 			isa = PBXGroup;
 			children = (
 				4B7333771E816B1700D7D941 /* Snippets */,
 				4B26AEC01E84CEA200561821 /* SnippetsTests */,
 				4B7333761E816B1700D7D941 /* Products */,
+				4B40FA591E8DD8F6008213D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
