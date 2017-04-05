@@ -11,4 +11,13 @@ import UIKit
 
 class PhotoSnippetCell: UITableViewCell {
     @IBOutlet var photo: UIImageView!
+    
+    @IBOutlet weak var date: UILabel!
+    var 	shareButton : (() -> Void)?
+    
+    @IBAction func shareButtonPressed() {
+        if let callback = shareButton {
+            callback()
+        }
+    }
 }
