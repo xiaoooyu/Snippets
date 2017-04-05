@@ -49,10 +49,19 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4a-ms-VGc">
+                                                            <rect key="frame" x="323" y="7" width="42" height="30"/>
+                                                            <state key="normal" title="Tweet"/>
+                                                            <connections>
+                                                                <action selector="shareButtonPressed" destination="R8T-hA-wHM" eventType="touchUpInside" id="0HA-kq-KVK"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="8xd-d5-Wyq" secondAttribute="trailing" constant="8" id="4Rh-7p-6O4"/>
+                                                        <constraint firstItem="z4a-ms-VGc" firstAttribute="centerY" secondItem="7tF-cX-RRC" secondAttribute="centerY" id="9NM-Vg-rgh"/>
+                                                        <constraint firstAttribute="trailing" secondItem="z4a-ms-VGc" secondAttribute="trailing" constant="10" id="Dv7-Em-wrm"/>
                                                         <constraint firstItem="8xd-d5-Wyq" firstAttribute="top" secondItem="7tF-cX-RRC" secondAttribute="top" id="NUV-yT-2eK"/>
                                                         <constraint firstAttribute="height" constant="44" id="Ui3-1b-x6T"/>
                                                         <constraint firstItem="8xd-d5-Wyq" firstAttribute="leading" secondItem="7tF-cX-RRC" secondAttribute="leading" constant="8" id="evA-8v-hh8"/>

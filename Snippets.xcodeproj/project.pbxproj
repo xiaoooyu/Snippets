@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B17FF1B1E816C2200C9E666 /* SnippetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B17FF1A1E816C2200C9E666 /* SnippetData.swift */; };
+		4B24B7661E91ECC000E11666 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B24B7651E91ECC000E11666 /* Social.framework */; };
 		4B26AEB81E849BBD00561821 /* TextSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26AEB71E849BBD00561821 /* TextSnippetCell.swift */; };
 		4B26AEBA1E849C1600561821 /* PhotoSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26AEB91E849C1600561821 /* PhotoSnippetCell.swift */; };
 		4B26AEC21E84CEA200561821 /* SnippetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26AEC11E84CEA200561821 /* SnippetsTests.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		4B17FF1A1E816C2200C9E666 /* SnippetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnippetData.swift; sourceTree = "<group>"; };
+		4B24B7651E91ECC000E11666 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4B26AEB71E849BBD00561821 /* TextSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSnippetCell.swift; sourceTree = "<group>"; };
 		4B26AEB91E849C1600561821 /* PhotoSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSnippetCell.swift; sourceTree = "<group>"; };
 		4B26AEBF1E84CEA100561821 /* SnippetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnippetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,12 +62,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B24B7661E91ECC000E11666 /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B24B7641E91ECBF00E11666 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B24B7651E91ECC000E11666 /* Social.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4B26AEC01E84CEA200561821 /* SnippetsTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +92,7 @@
 				4B7333771E816B1700D7D941 /* Snippets */,
 				4B26AEC01E84CEA200561821 /* SnippetsTests */,
 				4B7333761E816B1700D7D941 /* Products */,
+				4B24B7641E91ECBF00E11666 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

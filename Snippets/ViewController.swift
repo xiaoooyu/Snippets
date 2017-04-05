@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Social
 
 class ViewController: UIViewController {
 
     var data: [SnippetData] = [SnippetData]()
     let imagePicker = UIImagePickerController()
+    var shareButton: (() -> Void)?
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -86,7 +89,7 @@ class ViewController: UIViewController {
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
-    }
+    }        
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -125,6 +128,32 @@ extension ViewController: UITableViewDataSource {
             cell = tableView.dequeueReusableCell(withIdentifier: "textSnippetCell", for: indexPath)
             (cell as! TextSnippetCell).label.text = (snippetData as! TextData).textData
             (cell as! TextSnippetCell).date.text = dateString
+            (cell as! TextSnippetCell).shareButton = {
+                if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+                    let text = (snippetData as! TextData).textData
+                    guard let twVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter) else {
+                        print("Couldn't create twitter compse controller")
+                        return
+                    }
+                    
+                    if text.characters.count <= 140 {
+                        twVC.setInitialText("\(text)")
+                    } else {
+                        let tweetLengthIndex = text.index(text.startIndex, offsetBy: 140)
+                        let tweetChars = text.substring(to: tweetLengthIndex)
+                        twVC.setInitialText("\(tweetChars)")
+                    }
+                    
+                    self.present(twVC, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(title: "You are not logged into twitter",
+                                message: "Please login Twitter from the iOS settings app.",
+                                preferredStyle: .alert)
+                    let dissmissAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alert.addAction(dissmissAction)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
         case .photo:
             cell = tableView.dequeueReusableCell(withIdentifier: "photoSnippetCell", for: indexPath)
             (cell as! PhotoSnippetCell).photo.image = (snippetData as! PhotoData).photoData
