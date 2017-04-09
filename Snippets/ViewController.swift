@@ -8,10 +8,11 @@
 
 import UIKit
 import Social
+import CoreData
 
 class ViewController: UIViewController {
 
-    var data: [SnippetData] = [SnippetData]()
+    var data: [NSManagedObject] = [NSManagedObject]()
     let imagePicker = UIImagePickerController()
     var shareButton: (() -> Void)?
     
@@ -32,7 +33,24 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        reloadSnippetData()
         tableView.reloadData()
+    }
+    
+    func reloadSnippetData() {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = delegate.managedObjectContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Snippet")
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        request.sortDescriptors = [sortDescriptor]
+        
+        do {
+            let fetchResult = try managedContext.fetch(request)
+            self.data = fetchResult as! [NSManagedObject]
+        } catch {
+            let e = error as NSError
+            print("Unresolved error \(e), \(e.userInfo)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,8 +92,7 @@ class ViewController: UIViewController {
         textEntryVC.modalTransitionStyle = .coverVertical
         textEntryVC.saveText = {
             (text:String) in
-            let newTextSnippet = TextData(text: text, creationDate: Date())
-            self.data.append(newTextSnippet)
+            self.saveTextSnippet(text: text)
         }
         present(textEntryVC, animated: true, completion: nil)       
     }
@@ -89,7 +106,34 @@ class ViewController: UIViewController {
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
-    }        
+    }
+    
+    func saveTextSnippet(text: String) {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = delegate.managedObjectContext
+        let desc = NSEntityDescription.entity(forEntityName: "TextSnippet", in: managedContext)
+        let textSnippet = NSManagedObject(entity: desc!, insertInto: managedContext)
+        
+        textSnippet.setValue(SnippetType.text.rawValue, forKey: "type")
+        textSnippet.setValue(text, forKey: "text")
+        textSnippet.setValue(NSDate(), forKey: "date")
+        
+        delegate.saveContext()
+    }
+    
+    func savePhotoSnippet(photo: UIImage) {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = delegate.managedObjectContext
+        let desc = NSEntityDescription.entity(forEntityName: "PhotoSnippet", in: managedContext)
+        let photoSnippet = NSManagedObject(entity: desc!, insertInto: managedContext)
+        let photoData = UIImagePNGRepresentation(photo)
+        
+        photoSnippet.setValue(SnippetType.photo.rawValue, forKey: "type")
+        photoSnippet.setValue(NSDate(), forKey: "date")
+        photoSnippet.setValue(photoData, forKey:"photo")
+        
+        delegate.saveContext()
+    }
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -99,8 +143,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             return
         }
         
-        let newPhotoSnippet = PhotoData(photo: image, creationDate: Date())
-        self.data.append(newPhotoSnippet)
+        savePhotoSnippet(photo: image)
         dismiss(animated: true, completion: nil)
     }
 }
@@ -116,21 +159,27 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell
-        let sortedData = data.reversed() as [SnippetData]
-        let snippetData = sortedData[indexPath.row]
+        
+        let snippetData = data[indexPath.row]
+        let snippetDate = snippetData.value(forKey: "date") as! Date
+        let snippetType = SnippetType(rawValue: snippetData.value(forKey: "type") as! String)!
         
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d, yyyy hh:mm a"
-        let dateString = formatter.string(from: snippetData.date)
+        let dateString = formatter.string(from: snippetDate)
         
-        switch snippetData.type {
+        switch snippetType {
         case .text:
+            let snippetText = snippetData.value(forKey: "text") as! String
+            
             cell = tableView.dequeueReusableCell(withIdentifier: "textSnippetCell", for: indexPath)
-            (cell as! TextSnippetCell).label.text = (snippetData as! TextData).textData
+            
+            
+            (cell as! TextSnippetCell).label.text = snippetText
             (cell as! TextSnippetCell).date.text = dateString
             (cell as! TextSnippetCell).shareButton = {
                 if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
-                    let text = (snippetData as! TextData).textData
+                    let text = snippetText
                     guard let twVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter) else {
                         print("Couldn't create twitter compse controller")
                         return
@@ -155,12 +204,15 @@ extension ViewController: UITableViewDataSource {
                 }
             }
         case .photo:
+            let snippetPhoto = UIImage(data: snippetData.value(forKey: "photo") as! Data)
+            
             cell = tableView.dequeueReusableCell(withIdentifier: "photoSnippetCell", for: indexPath)
-            (cell as! PhotoSnippetCell).photo.image = (snippetData as! PhotoData).photoData
+            
+            (cell as! PhotoSnippetCell).photo.image = snippetPhoto
             (cell as! PhotoSnippetCell).date.text = dateString
             (cell as! PhotoSnippetCell).shareButton = {
                 if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
-                    let photo = (snippetData as! PhotoData).photoData
+                    let photo = snippetPhoto
                     guard let twVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter) else {
                         print("Couldn't create Twitter compose controller")
                         return

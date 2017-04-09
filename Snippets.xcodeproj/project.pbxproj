@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B13A7201E99CDFE0025A120 /* SnippetData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B13A71E1E99CDFE0025A120 /* SnippetData.xcdatamodeld */; };
 		4B17FF1B1E816C2200C9E666 /* SnippetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B17FF1A1E816C2200C9E666 /* SnippetData.swift */; };
 		4B24B7661E91ECC000E11666 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B24B7651E91ECC000E11666 /* Social.framework */; };
 		4B26AEB81E849BBD00561821 /* TextSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26AEB71E849BBD00561821 /* TextSnippetCell.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B13A71F1E99CDFE0025A120 /* SnippetData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnippetData.xcdatamodel; sourceTree = "<group>"; };
 		4B17FF1A1E816C2200C9E666 /* SnippetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnippetData.swift; sourceTree = "<group>"; };
 		4B24B7651E91ECC000E11666 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4B26AEB71E849BBD00561821 /* TextSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSnippetCell.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				4B7333781E816B1700D7D941 /* AppDelegate.swift */,
 				4B73337A1E816B1700D7D941 /* ViewController.swift */,
 				4B73337C1E816B1700D7D941 /* Main.storyboard */,
+				4B13A71E1E99CDFE0025A120 /* SnippetData.xcdatamodeld */,
 				4B73337F1E816B1700D7D941 /* Assets.xcassets */,
 				4B7333811E816B1700D7D941 /* LaunchScreen.storyboard */,
 				4B7333841E816B1700D7D941 /* Info.plist */,
@@ -241,6 +244,7 @@
 				4B26AEB81E849BBD00561821 /* TextSnippetCell.swift in Sources */,
 				4BA38FB81E82A4330092DDB5 /* TextSnippetEntryViewController.swift in Sources */,
 				4B17FF1B1E816C2200C9E666 /* SnippetData.swift in Sources */,
+				4B13A7201E99CDFE0025A120 /* SnippetData.xcdatamodeld in Sources */,
 				4B7333791E816B1700D7D941 /* AppDelegate.swift in Sources */,
 				4B26AEBA1E849C1600561821 /* PhotoSnippetCell.swift in Sources */,
 			);
@@ -454,6 +458,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4B13A71E1E99CDFE0025A120 /* SnippetData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4B13A71F1E99CDFE0025A120 /* SnippetData.xcdatamodel */,
+			);
+			currentVersion = 4B13A71F1E99CDFE0025A120 /* SnippetData.xcdatamodel */;
+			path = SnippetData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4B73336D1E816B1700D7D941 /* Project object */;
 }
