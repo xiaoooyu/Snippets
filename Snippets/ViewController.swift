@@ -157,6 +157,21 @@ extension ViewController: UITableViewDataSource {
         return data.count
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = delegate.managedObjectContext
+        let currentObject = data[indexPath.row]
+        
+        managedContext.delete(currentObject)
+        delegate.saveContext()
+        
+        reloadSnippetData()
+        
+        tableView.beginUpdates()
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+        tableView.endUpdates()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell
         
