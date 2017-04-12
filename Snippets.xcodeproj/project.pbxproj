@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		4B13A7201E99CDFE0025A120 /* SnippetData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B13A71E1E99CDFE0025A120 /* SnippetData.xcdatamodeld */; };
 		4B17FF1B1E816C2200C9E666 /* SnippetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B17FF1A1E816C2200C9E666 /* SnippetData.swift */; };
+		4B19CDA41E9E074A00589042 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B19CDA21E9E074A00589042 /* Interface.storyboard */; };
+		4B19CDA61E9E074A00589042 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B19CDA51E9E074A00589042 /* Assets.xcassets */; };
+		4B19CDAD1E9E074A00589042 /* Snippet Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4B19CDAC1E9E074A00589042 /* Snippet Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4B19CDB21E9E074A00589042 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19CDB11E9E074A00589042 /* InterfaceController.swift */; };
+		4B19CDB41E9E074A00589042 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19CDB31E9E074A00589042 /* ExtensionDelegate.swift */; };
+		4B19CDB61E9E074A00589042 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19CDB51E9E074A00589042 /* ComplicationController.swift */; };
+		4B19CDB81E9E074A00589042 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B19CDB71E9E074A00589042 /* Assets.xcassets */; };
+		4B19CDBC1E9E074A00589042 /* Snippet Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4B19CDA01E9E074A00589042 /* Snippet Watch.app */; };
+		4B19CDC61E9E0DD900589042 /* ConfirmationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19CDC51E9E0DD900589042 /* ConfirmationInterfaceController.swift */; };
 		4B24B7661E91ECC000E11666 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B24B7651E91ECC000E11666 /* Social.framework */; };
 		4B26AEB81E849BBD00561821 /* TextSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26AEB71E849BBD00561821 /* TextSnippetCell.swift */; };
 		4B26AEBA1E849C1600561821 /* PhotoSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26AEB91E849C1600561821 /* PhotoSnippetCell.swift */; };
@@ -23,6 +32,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4B19CDAE1E9E074A00589042 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4B73336D1E816B1700D7D941 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B19CDAB1E9E074A00589042;
+			remoteInfo = "Snippet Watch Extension";
+		};
+		4B19CDBA1E9E074A00589042 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4B73336D1E816B1700D7D941 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B19CD9F1E9E074A00589042;
+			remoteInfo = "Snippet Watch";
+		};
 		4B26AEC41E84CEA200561821 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4B73336D1E816B1700D7D941 /* Project object */;
@@ -32,9 +55,45 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4B19CDC21E9E074A00589042 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4B19CDAD1E9E074A00589042 /* Snippet Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B19CDC41E9E074A00589042 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				4B19CDBC1E9E074A00589042 /* Snippet Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4B13A71F1E99CDFE0025A120 /* SnippetData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnippetData.xcdatamodel; sourceTree = "<group>"; };
 		4B17FF1A1E816C2200C9E666 /* SnippetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnippetData.swift; sourceTree = "<group>"; };
+		4B19CDA01E9E074A00589042 /* Snippet Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snippet Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B19CDA31E9E074A00589042 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		4B19CDA51E9E074A00589042 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4B19CDA71E9E074A00589042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B19CDAC1E9E074A00589042 /* Snippet Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Snippet Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B19CDB11E9E074A00589042 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		4B19CDB31E9E074A00589042 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		4B19CDB51E9E074A00589042 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		4B19CDB71E9E074A00589042 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4B19CDB91E9E074A00589042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B19CDC51E9E0DD900589042 /* ConfirmationInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationInterfaceController.swift; sourceTree = "<group>"; };
 		4B24B7651E91ECC000E11666 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4B26AEB71E849BBD00561821 /* TextSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSnippetCell.swift; sourceTree = "<group>"; };
 		4B26AEB91E849C1600561821 /* PhotoSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSnippetCell.swift; sourceTree = "<group>"; };
@@ -53,6 +112,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4B19CDA91E9E074A00589042 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B26AEBC1E84CEA100561821 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,6 +137,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B19CDA11E9E074A00589042 /* Snippet Watch */ = {
+			isa = PBXGroup;
+			children = (
+				4B19CDA21E9E074A00589042 /* Interface.storyboard */,
+				4B19CDA51E9E074A00589042 /* Assets.xcassets */,
+				4B19CDA71E9E074A00589042 /* Info.plist */,
+			);
+			path = "Snippet Watch";
+			sourceTree = "<group>";
+		};
+		4B19CDB01E9E074A00589042 /* Snippet Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4B19CDB11E9E074A00589042 /* InterfaceController.swift */,
+				4B19CDB31E9E074A00589042 /* ExtensionDelegate.swift */,
+				4B19CDB51E9E074A00589042 /* ComplicationController.swift */,
+				4B19CDB71E9E074A00589042 /* Assets.xcassets */,
+				4B19CDB91E9E074A00589042 /* Info.plist */,
+				4B19CDC51E9E0DD900589042 /* ConfirmationInterfaceController.swift */,
+			);
+			path = "Snippet Watch Extension";
+			sourceTree = "<group>";
+		};
 		4B24B7641E91ECBF00E11666 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +182,8 @@
 			children = (
 				4B7333771E816B1700D7D941 /* Snippets */,
 				4B26AEC01E84CEA200561821 /* SnippetsTests */,
+				4B19CDA11E9E074A00589042 /* Snippet Watch */,
+				4B19CDB01E9E074A00589042 /* Snippet Watch Extension */,
 				4B7333761E816B1700D7D941 /* Products */,
 				4B24B7641E91ECBF00E11666 /* Frameworks */,
 			);
@@ -103,6 +194,8 @@
 			children = (
 				4B7333751E816B1700D7D941 /* Snippets.app */,
 				4B26AEBF1E84CEA100561821 /* SnippetsTests.xctest */,
+				4B19CDA01E9E074A00589042 /* Snippet Watch.app */,
+				4B19CDAC1E9E074A00589042 /* Snippet Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +222,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4B19CD9F1E9E074A00589042 /* Snippet Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B19CDC31E9E074A00589042 /* Build configuration list for PBXNativeTarget "Snippet Watch" */;
+			buildPhases = (
+				4B19CD9E1E9E074A00589042 /* Resources */,
+				4B19CDC21E9E074A00589042 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B19CDAF1E9E074A00589042 /* PBXTargetDependency */,
+			);
+			name = "Snippet Watch";
+			productName = "Snippet Watch";
+			productReference = 4B19CDA01E9E074A00589042 /* Snippet Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		4B19CDAB1E9E074A00589042 /* Snippet Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B19CDC11E9E074A00589042 /* Build configuration list for PBXNativeTarget "Snippet Watch Extension" */;
+			buildPhases = (
+				4B19CDA81E9E074A00589042 /* Sources */,
+				4B19CDA91E9E074A00589042 /* Frameworks */,
+				4B19CDAA1E9E074A00589042 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Snippet Watch Extension";
+			productName = "Snippet Watch Extension";
+			productReference = 4B19CDAC1E9E074A00589042 /* Snippet Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		4B26AEBE1E84CEA100561821 /* SnippetsTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B26AEC61E84CEA200561821 /* Build configuration list for PBXNativeTarget "SnippetsTests" */;
@@ -154,10 +281,12 @@
 				4B7333711E816B1700D7D941 /* Sources */,
 				4B7333721E816B1700D7D941 /* Frameworks */,
 				4B7333731E816B1700D7D941 /* Resources */,
+				4B19CDC41E9E074A00589042 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4B19CDBB1E9E074A00589042 /* PBXTargetDependency */,
 			);
 			name = Snippets;
 			productName = Snippets;
@@ -170,10 +299,20 @@
 		4B73336D1E816B1700D7D941 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Yin Xiaoyu";
 				TargetAttributes = {
+					4B19CD9F1E9E074A00589042 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 72Q6E7W24X;
+						ProvisioningStyle = Automatic;
+					};
+					4B19CDAB1E9E074A00589042 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 72Q6E7W24X;
+						ProvisioningStyle = Automatic;
+					};
 					4B26AEBE1E84CEA100561821 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 72Q6E7W24X;
@@ -202,11 +341,30 @@
 			targets = (
 				4B7333741E816B1700D7D941 /* Snippets */,
 				4B26AEBE1E84CEA100561821 /* SnippetsTests */,
+				4B19CD9F1E9E074A00589042 /* Snippet Watch */,
+				4B19CDAB1E9E074A00589042 /* Snippet Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4B19CD9E1E9E074A00589042 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B19CDA61E9E074A00589042 /* Assets.xcassets in Resources */,
+				4B19CDA41E9E074A00589042 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B19CDAA1E9E074A00589042 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B19CDB81E9E074A00589042 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B26AEBD1E84CEA100561821 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,6 +385,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4B19CDA81E9E074A00589042 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B19CDB41E9E074A00589042 /* ExtensionDelegate.swift in Sources */,
+				4B19CDB21E9E074A00589042 /* InterfaceController.swift in Sources */,
+				4B19CDC61E9E0DD900589042 /* ConfirmationInterfaceController.swift in Sources */,
+				4B19CDB61E9E074A00589042 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B26AEBB1E84CEA100561821 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,6 +422,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4B19CDAF1E9E074A00589042 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B19CDAB1E9E074A00589042 /* Snippet Watch Extension */;
+			targetProxy = 4B19CDAE1E9E074A00589042 /* PBXContainerItemProxy */;
+		};
+		4B19CDBB1E9E074A00589042 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B19CD9F1E9E074A00589042 /* Snippet Watch */;
+			targetProxy = 4B19CDBA1E9E074A00589042 /* PBXContainerItemProxy */;
+		};
 		4B26AEC51E84CEA200561821 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4B7333741E816B1700D7D941 /* Snippets */;
@@ -261,6 +440,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4B19CDA21E9E074A00589042 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B19CDA31E9E074A00589042 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		4B73337C1E816B1700D7D941 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -280,6 +467,80 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4B19CDBD1E9E074A00589042 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 72Q6E7W24X;
+				IBSC_MODULE = Snippet_Watch_Extension;
+				INFOPLIST_FILE = "Snippet Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoooyu.Snippets.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		4B19CDBE1E9E074A00589042 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 72Q6E7W24X;
+				IBSC_MODULE = Snippet_Watch_Extension;
+				INFOPLIST_FILE = "Snippet Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoooyu.Snippets.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		4B19CDBF1E9E074A00589042 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 72Q6E7W24X;
+				INFOPLIST_FILE = "Snippet Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoooyu.Snippets.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		4B19CDC01E9E074A00589042 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = 72Q6E7W24X;
+				INFOPLIST_FILE = "Snippet Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoooyu.Snippets.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
 		4B26AEC71E84CEA200561821 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -430,6 +691,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4B19CDC11E9E074A00589042 /* Build configuration list for PBXNativeTarget "Snippet Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B19CDBF1E9E074A00589042 /* Debug */,
+				4B19CDC01E9E074A00589042 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4B19CDC31E9E074A00589042 /* Build configuration list for PBXNativeTarget "Snippet Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B19CDBD1E9E074A00589042 /* Debug */,
+				4B19CDBE1E9E074A00589042 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		4B26AEC61E84CEA200561821 /* Build configuration list for PBXNativeTarget "SnippetsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

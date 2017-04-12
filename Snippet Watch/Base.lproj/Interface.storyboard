@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+    </dependencies>
+    <scenes>
+        <!--Snippets-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="Snippets" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Snippet_Watch" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="New Text Snippet" id="USY-qp-LiW"/>
+                        <button alignment="center" id="uTv-jZ-qts">
+                            <group key="contentGroup" width="1" alignment="left" id="qcr-dc-dbY">
+                                <items>
+                                    <imageView width="130" height="130" alignment="left" image="PlusIcon" id="WTP-vZ-n4r">
+                                        <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                </items>
+                            </group>
+                            <connections>
+                                <action selector="createNewSnippet" destination="AgC-eL-Hgc" id="Nyg-HP-XXX"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+        </scene>
+        <!--Snippets-->
+        <scene sceneID="eWM-08-x1U">
+            <objects>
+                <controller identifier="confirmation" title="Snippets" id="U2h-t1-sE8" customClass="ConfirmationInterfaceController" customModule="Snippet_Watch_Extension">
+                    <items>
+                        <label alignment="left" text="Is this right?" id="TI6-Hv-Tu8"/>
+                        <group width="1" alignment="left" id="UVx-Th-UmI">
+                            <items>
+                                <label alignment="left" text="Label" numberOfLines="0" id="Tys-Hb-d4G"/>
+                            </items>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <edgeInsets key="margins" left="6" right="6" top="6" bottom="6"/>
+                        </group>
+                        <button width="1" alignment="left" title="Yes" id="5QS-EG-XUC">
+                            <connections>
+                                <action selector="confirmText" destination="U2h-t1-sE8" id="IiG-N3-ek0"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="No, try again" id="QSk-vf-BLr">
+                            <connections>
+                                <action selector="tryAgain" destination="U2h-t1-sE8" id="2tz-4V-OBF"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Cancel" id="Iu8-jN-dEz">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancel" destination="U2h-t1-sE8" id="v20-jY-Fwy"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="resultLabel" destination="Tys-Hb-d4G" id="0fi-yb-Gmq"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="251" y="88"/>
+        </scene>
+    </scenes>
+</document>
