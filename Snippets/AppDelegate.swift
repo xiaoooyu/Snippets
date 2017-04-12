@@ -8,15 +8,26 @@
 
 import UIKit
 import CoreData
+import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var session: WCSession?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if WCSession.isSupported() {
+            session = WCSession.default()
+            if let _session = self.session {
+                _session.delegate = self
+                _session.activate()
+            }
+        }
+        
         return true
     }
 
@@ -124,6 +135,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Unsolved error \(nserror), \(nserror.userInfo)")
                 abort()
             }
+        }
+    }
+}
+
+extension AppDelegate: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        return
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        return
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        return
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        if let textData = message["textData"] as? String, let vc = self.window!.rootViewController! as? ViewController {
+            DispatchQueue.main.async( execute: {
+                vc.saveTextSnippet(text: textData)
+                vc.reloadSnippetData()
+                vc.tableView.reloadData()
+            })
         }
     }
 }

@@ -8,13 +8,20 @@
 
 import WatchKit
 import Foundation
-
+import WatchConnectivity
 
 class InterfaceController: WKInterfaceController {
-
+    
+    var session: WCSession?
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        session = WCSession.default()
+        if let _session = session {
+            _session.delegate = self
+            _session.activate()
+        }
         // Configure interface objects here.
     }
     
@@ -42,6 +49,11 @@ class InterfaceController: WKInterfaceController {
         }
         
         let processText = { (text:String) in
+            let info = ["textData": text]
+            if let _session = self.session {
+               _session.sendMessage(info, replyHandler: nil, errorHandler: nil)
+            }
+            
             print("processText: \(text)")
         }
         
@@ -50,4 +62,12 @@ class InterfaceController: WKInterfaceController {
         
         pushController(withName: "confirmation", context: confirmContext)
     }
+}
+
+// MARK: WCSessionDelegate
+extension InterfaceController: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        return
+    }
+    
 }

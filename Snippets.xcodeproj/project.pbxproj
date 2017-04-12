@@ -18,6 +18,7 @@
 		4B19CDB81E9E074A00589042 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B19CDB71E9E074A00589042 /* Assets.xcassets */; };
 		4B19CDBC1E9E074A00589042 /* Snippet Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4B19CDA01E9E074A00589042 /* Snippet Watch.app */; };
 		4B19CDC61E9E0DD900589042 /* ConfirmationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19CDC51E9E0DD900589042 /* ConfirmationInterfaceController.swift */; };
+		4B19CDC81E9E142500589042 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B19CDC71E9E142500589042 /* WatchConnectivity.framework */; };
 		4B24B7661E91ECC000E11666 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B24B7651E91ECC000E11666 /* Social.framework */; };
 		4B26AEB81E849BBD00561821 /* TextSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26AEB71E849BBD00561821 /* TextSnippetCell.swift */; };
 		4B26AEBA1E849C1600561821 /* PhotoSnippetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B26AEB91E849C1600561821 /* PhotoSnippetCell.swift */; };
@@ -94,6 +95,7 @@
 		4B19CDB71E9E074A00589042 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B19CDB91E9E074A00589042 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B19CDC51E9E0DD900589042 /* ConfirmationInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationInterfaceController.swift; sourceTree = "<group>"; };
+		4B19CDC71E9E142500589042 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		4B24B7651E91ECC000E11666 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4B26AEB71E849BBD00561821 /* TextSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextSnippetCell.swift; sourceTree = "<group>"; };
 		4B26AEB91E849C1600561821 /* PhotoSnippetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSnippetCell.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B19CDC81E9E142500589042 /* WatchConnectivity.framework in Frameworks */,
 				4B24B7661E91ECC000E11666 /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,6 +166,7 @@
 		4B24B7641E91ECBF00E11666 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B19CDC71E9E142500589042 /* WatchConnectivity.framework */,
 				4B24B7651E91ECC000E11666 /* Social.framework */,
 			);
 			name = Frameworks;
