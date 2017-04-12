@@ -14,7 +14,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Configuration
     
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
-        handler([.forward, .backward])
+//        handler([.forward, .backward])
     }
     
     func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
@@ -33,7 +33,30 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
-        handler(nil)
+        var template: CLKComplicationTemplate
+        
+        switch complication.family {
+        case .circularSmall:
+            let t = CLKComplicationTemplateCircularSmallSimpleImage()
+            let image = UIImage(named: "Circular")!
+            t.imageProvider = CLKImageProvider(onePieceImage: image)
+            template = t
+        case .modularSmall:
+            let t = CLKComplicationTemplateModularSmallSimpleImage()
+            let image = UIImage(named: "Modular")!
+            t.imageProvider = CLKImageProvider(onePieceImage: image)
+            template = t
+        case .utilitarianSmall:
+            let t = CLKComplicationTemplateUtilitarianSmallSquare()
+            let image = UIImage(named:"Utilitarian")!
+            t.imageProvider = CLKImageProvider(onePieceImage: image)
+            template = t
+        default:
+            handler(nil)
+            return
+        }
+        template.tintColor = UIColor.white
+        handler(CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template))
     }
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
