@@ -26,7 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,6 +36,16 @@
                BlueprintIdentifier = "4B26AEBE1E84CEA100561821"
                BuildableName = "SnippetsTests.xctest"
                BlueprintName = "SnippetsTests"
+               ReferencedContainer = "container:Snippets.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4B0086081EA38B0900AE25D2"
+               BuildableName = "SnippetsUITests.xctest"
+               BlueprintName = "SnippetsUITests"
                ReferencedContainer = "container:Snippets.xcodeproj">
             </BuildableReference>
          </TestableReference>
